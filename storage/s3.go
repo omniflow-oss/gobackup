@@ -1,6 +1,7 @@
 package storage
 
 import (
+	"crypto/tls"
 	"fmt"
 	"math"
 	"net/http"
@@ -247,7 +248,12 @@ func (s *S3) open() (err error) {
 	timeout := s.viper.GetInt("timeout")
 	uploadTimeoutDuration := time.Duration(timeout) * time.Second
 
-	httpClient := &http.Client{Timeout: uploadTimeoutDuration}
+	httpClient := &http.Client{
+		Timeout: uploadTimeoutDuration,
+		Transport: &http.Transport{
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true}, // Ignore certificate validation
+		},
+	}
 	cfg.HTTPClient = httpClient
 	s.awsCfg = cfg
 
