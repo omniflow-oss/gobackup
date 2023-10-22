@@ -1,10 +1,10 @@
 FROM alpine:latest
 ARG VERSION=latest
+RUN apk add postgresql16-client --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 RUN apk add \
   curl \
   ca-certificates \
   openssl \
-  postgresql16-client \
   mariadb-connector-c \
   mysql-client \
   redis \
