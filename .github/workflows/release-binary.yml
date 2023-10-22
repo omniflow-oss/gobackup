@@ -9,6 +9,7 @@ jobs:
     name: "Release Binary"
     if: github.repository == 'omniflow-oss/gobackup'
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
