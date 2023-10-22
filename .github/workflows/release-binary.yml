@@ -54,8 +54,8 @@ jobs:
         with:
           push: true
           tags: |
-            omniflow-oss/gobackup:latest
-            omniflow-oss/gobackup:${{ steps.tagName.outputs.tag }}
+            talelcool/gobackup:latest
+            talelcool/gobackup:${{ steps.tagName.outputs.tag }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
