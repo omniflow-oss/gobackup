@@ -1,6 +1,7 @@
 FROM alpine:latest
 ARG VERSION=latest
-RUN apk add postgresql16-client --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
+RUN apk add postgresql16-client --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main
+RUN apk add mongodb-tools --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 RUN apk add \
   curl \
   ca-certificates \
@@ -8,7 +9,6 @@ RUN apk add \
   mariadb-connector-c \
   mysql-client \
   redis \
-  mongodb-tools \
   sqlite \
   # replace busybox utils
   tar \
