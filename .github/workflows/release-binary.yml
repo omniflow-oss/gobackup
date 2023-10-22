@@ -7,7 +7,7 @@ on:
 jobs:
   goreleaser:
     name: "Release Binary"
-    if: github.repository == 'gobackup/gobackup'
+    if: github.repository == 'omniflow-oss/gobackup'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
