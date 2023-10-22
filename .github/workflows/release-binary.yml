@@ -55,8 +55,8 @@ jobs:
         with:
           push: true
           tags: |
-            talelcool/gobackup:latest
-            talelcool/gobackup:${{ steps.tagName.outputs.tag }}
+            talelk/gobackup:latest
+            talelk/gobackup:${{ steps.tagName.outputs.tag }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
