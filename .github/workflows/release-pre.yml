@@ -54,7 +54,7 @@ jobs:
           push: true
           build-args: VERSION=${{ steps.tagName.outputs.tag }}
           tags: |
-            omniflow-oss/gobackup:${{ steps.tagName.outputs.tag }}
+            talelcool/gobackup:${{ steps.tagName.outputs.tag }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
