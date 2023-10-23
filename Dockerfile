@@ -4,7 +4,6 @@ RUN apk add postgresql16-client --repository=http://dl-cdn.alpinelinux.org/alpin
 RUN apk add mongodb-tools --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 RUN apk add \
   curl \
-  ca-certificates \
   openssl \
   mariadb-connector-c \
   mysql-client \
@@ -28,6 +27,8 @@ RUN apk add \
   icu \
   && \
   rm -rf /var/cache/apk/*
+  RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/* 
+
 
 WORKDIR /tmp
 RUN wget https://aka.ms/sqlpackage-linux && \
